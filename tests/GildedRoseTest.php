@@ -7,6 +7,7 @@ namespace Tests;
 use GildedRose\GildedRose;
 use GildedRose\Item;
 use PHPUnit\Framework\TestCase;
+use GildedRose\SetProductProcessingClass;
 
 class GildedRoseTest extends TestCase
 {
@@ -19,11 +20,11 @@ class GildedRoseTest extends TestCase
     }
     public function test_updates_regular_items_before_sell_date(): void
     {
-        $items = [new Item("regular", 10, 5)];
-        $gildedRose = new GildedRose($items);
+        $items = new Item("regular", 10, 5);
+        $gildedRose = SetProductProcessingClass::setProcessingClass($items);
         $gildedRose->updateQuality();
-        $this->assertEquals($items[0]->quality, 4);
-        $this->assertEquals($items[0]->sell_in, 9);
+        $this->assertEquals($items->quality, 4);
+        $this->assertEquals($items->sell_in, 9);
     }
     public function test_updates_regular_items_on_the_sell_date(): void
     {
