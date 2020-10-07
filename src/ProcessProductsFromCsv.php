@@ -17,15 +17,22 @@ class ProcessProductsFromCsv
 
     private function openCsv()
     {
+        echo "Name Sell_in Quality";
+        print("\n");
+        echo "--------------------";
+            print("\n");
         $fileName = fopen($this->fileName, "r");
         while (!feof($fileName)) {
             $row = fgetcsv($fileName);
-            $this->item = SetProductProcessingClass
-            ::setProcessingClass(new Item($row[0],$row[1],$row[2]));
-            print_r($this->item);
+            $item = new Item($row[0],$row[1],$row[2]);
+            $GildedRose = SetProductProcessingClass
+            ::setProcessingClass($item);
+            echo $item->name." ".$item->sell_in." ".$item->quality." Before";
             print("\n");
-            $this->item->updateProductQuality();
-            print_r($this->item);
+            $GildedRose->updateQuality();
+            
+            echo $item->name." ".$item->sell_in." ".$item->quality." After";
+            print("\n");
         }
         fclose($fileName);
     }
