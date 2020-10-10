@@ -4,15 +4,14 @@ declare(strict_types=1);
 
 namespace GildedRose;
 
-class Brie extends BasicProduct 
+class Brie extends BasicProduct
 {
-    
-
-    public function __construct($item)
+    public function __construct(Item $item)
     {
         $this->item = $item;
     }
-    public function updateQuality($item) :void
+
+    public function updateQuality(Item $item): void
     {
         ++$this->item->quality;
 

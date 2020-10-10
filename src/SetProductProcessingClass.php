@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace GildedRose;
 
 class SetProductProcessingClass
-{   /**
-    * @var array
-    */
+{
+    /**
+     * @var array
+     */
     protected static $lookup = [
         'regular' => Regular::class,
         'Aged Brie' => Brie::class,
@@ -16,7 +17,7 @@ class SetProductProcessingClass
         'Conjured Mana Cake' => Conjured::class,
     ];
 
-    public static function setProcessingClass(Item $item)
+    public static function setProcessingClass(Item $item) 
     {
         $class = isset(static::$lookup[$item->name])
             ? static::$lookup[$item->name] : Item::class;

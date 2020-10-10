@@ -10,7 +10,6 @@ use PHPUnit\Framework\TestCase;
 
 class GildedRoseTest extends TestCase
 {
-  
     public function testUpdatesRegularItemsBeforeSellDate(): void
     {
         $items = new Item('regular', 10, 5);

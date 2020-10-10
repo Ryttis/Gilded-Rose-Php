@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace GildedRose;
 
-class BackStagePass extends BasicProduct 
-{   
+class BackStagePass extends BasicProduct
+{
     public function __construct(Item $item)
     {
         $this->item = $item;
     }
-    public function updateQuality($item):void
-  
+
+    public function updateQuality(Item $item): void
     {
         --$this->item->sell_in;
 
         if ($this->item->quality >= 50) {
-        exit;
+            exit;
         }
 
         if ($this->item->sell_in < 0) {
