@@ -1,16 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace GildedRose;
 
-class Conjured extends BasicProduct implements ProductFeatures
+class Conjured extends BasicProduct 
 {
-
-    public function updateQuality()
+    public function __construct($item)
     {
+        $this->item = $item;
+    }
+    public function updateQuality($item):void
+    {
+        --$this->item->sell_in;
 
-        $this->item->sell_in -= 1;
-
-        if ($this->item->quality == 0) {
+        if ($this->item->quality === 0) {
             return;
         }
 

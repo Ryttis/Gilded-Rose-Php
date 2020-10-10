@@ -7,10 +7,11 @@ namespace GildedRose;
  */
 abstract class BasicProduct
 
-{
-
-    public function __construct(Item $item)
-    {
-        $this->item = $item;
-    }
+{   
+    /**
+    * @var Item
+    */
+    protected $item;
+    abstract public function updateQuality($item):void;
+   
 }

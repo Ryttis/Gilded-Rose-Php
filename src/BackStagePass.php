@@ -1,29 +1,35 @@
 <?php
 
+declare(strict_types=1);
+
 namespace GildedRose;
 
-class BackStagePass extends BasicProduct implements ProductFeatures
-{
-
-    public function updateQuality()
+class BackStagePass extends BasicProduct 
+{   
+    public function __construct(Item $item)
     {
-
-        $this->item->sell_in -= 1;
+        $this->item = $item;
+    }
+    public function updateQuality($item):void
+  
+    {
+        --$this->item->sell_in;
 
         if ($this->item->quality >= 50) {
-            return;
+        exit;
         }
 
         if ($this->item->sell_in < 0) {
-            return $this->item->quality = 0;
+            $this->item->quality = 0;
+            exit;
         }
-        $this->item->quality += 1;
+        ++$this->item->quality;
 
         if ($this->item->sell_in < 10) {
-            $this->item->quality += 1;
+            ++$this->item->quality;
         }
         if ($this->item->sell_in < 5) {
-            $this->item->quality += 1;
+            ++$this->item->quality;
         }
     }
 }

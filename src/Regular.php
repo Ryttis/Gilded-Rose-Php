@@ -1,20 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 namespace GildedRose;
 
-class Regular extends BasicProduct implements ProductFeatures
+class Regular extends BasicProduct 
 {
-
-    public function updateQuality()
+    public function __construct($item)
     {
-
-        $this->item->sell_in -= 1;
-        $this->item->quality -= 1;
+        $this->item = $item;
+    }
+    public function updateQuality($item):void
+    {
+        --$this->item->sell_in;
+        --$this->item->quality;
 
         if ($this->item->sell_in <= 0) {
-            $this->item->quality -= 1;
+            --$this->item->quality;
         }
-
 
         if ($this->item->quality < 0) {
             $this->item->quality = 0;

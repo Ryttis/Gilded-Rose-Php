@@ -1,21 +1,29 @@
 <?php
+
+declare(strict_types=1);
+
 namespace GildedRose;
 
-Class Brie extends BasicProduct implements ProductFeatures
+class Brie extends BasicProduct 
 {
+    
 
-public function updateQuality(){
+    public function __construct($item)
+    {
+        $this->item = $item;
+    }
+    public function updateQuality($item) :void
+    {
+        ++$this->item->quality;
 
-$this->item->quality += 1;
+        --$this->item->sell_in;
 
-$this->item->sell_in -= 1;
+        if ($this->item->sell_in <= 0) {
+            ++$this->item->quality;
+        }
 
-if($this->item->sell_in <= 0){
-    $this->item->quality += 1;
-}
-
-if($this->item->quality >= 50){
-    $this->item->quality = 50;
-}
-}
+        if ($this->item->quality >= 50) {
+            $this->item->quality = 50;
+        }
+    }
 }
