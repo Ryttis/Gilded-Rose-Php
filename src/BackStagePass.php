@@ -15,7 +15,10 @@ class BackStagePass extends BasicProduct
     {
         $this->item = $item;
     }
-
+    /**
+     * @param Item $item
+     * @return void
+     */
     public function updateQuality(Item $item): void
     {
         --$this->item->sell_in;

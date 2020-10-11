@@ -15,7 +15,10 @@ class Brie extends BasicProduct
     {
         $this->item = $item;
     }
-
+    /**
+     * @param Item $item
+     * @return void
+     */
     public function updateQuality(Item $item): void
     {
         ++$this->item->quality;

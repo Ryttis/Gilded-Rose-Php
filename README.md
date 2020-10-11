@@ -1,11 +1,9 @@
 # GildedRose Kata - PHP Version
 
-
-
 ### Requirements
 php: 7.3 or above
 
-###Installation
+### Installation
 composer install
 
 ### Tests
@@ -19,7 +17,9 @@ This is  PHP solution to Gilded Rose Refactoring Kata.
 * Factory Pattern was used to build Products (implementations of Items)
 * Item class was injected as dependency.
 
-### New Product
- If you want to introduce a new product, first create a class in src directory.
+
+### Product
+* In all product classes implemented updateQuality() method - updates $sell_in and $quality properties values injected from Item class. 
+* If you want to introduce a new product - simply create a product class in src directory and update protected static $lookup array in SetProductProcessingClass class - add product name with asocialted class name.
 
 Good luck
