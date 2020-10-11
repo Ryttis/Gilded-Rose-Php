@@ -4,3 +4,7 @@
 /.phpunit.result.cache
 /build
 /vendor
+.vscode
+.editorconfig
+.phpstan.neon
+.ecs.yaml

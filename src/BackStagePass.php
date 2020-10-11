@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace GildedRose;
 
+/**
+ * Class BackStagePass
+ *
+ * @package \GildedRose
+ */
 class BackStagePass extends BasicProduct
 {
     public function __construct(Item $item)

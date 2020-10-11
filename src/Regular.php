@@ -4,6 +4,12 @@ declare(strict_types=1);
 
 namespace GildedRose;
 
+
+/**
+ * Class Regular
+ *
+ * @package \GildedRose
+ */
 class Regular extends BasicProduct
 {
     public function __construct(Item $item)

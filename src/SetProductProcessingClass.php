@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace GildedRose;
 
+/**
+ * Class SetProductProcessingClass
+ *
+ * @package \GildedRose
+ */
 class SetProductProcessingClass
 {
     /**
@@ -17,7 +22,7 @@ class SetProductProcessingClass
         'Conjured Mana Cake' => Conjured::class,
     ];
 
-    public static function setProcessingClass(Item $item) 
+    public static function setProcessingClass(Item $item): BasicProduct
     {
         $class = isset(static::$lookup[$item->name])
             ? static::$lookup[$item->name] : Item::class;
