@@ -1,16 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace GildedRose;
 
 /**
- * Abstract Class for transactions loading from file into array
+ * Class BasicProduct
+ *
+ * @package \GildedRose
  */
 abstract class BasicProduct
-
 {
+    /**
+     * @var \GildedRose\Item
+     */
+    protected $item;
 
-    public function __construct(Item $item)
-    {
-        $this->item = $item;
-    }
+    abstract public function updateQuality(Item $item): void;
 }
