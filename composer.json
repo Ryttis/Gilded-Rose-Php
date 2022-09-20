@@ -2,7 +2,7 @@
     "name": "emilybache/gilded-rose-refactoring-kata",
     "description": "A kata to practice refactoring, tests and polymorphism",
     "require": {
-        "php": "^7.3"
+        "php": "^8.0"
         
     },
     "autoload": {
@@ -19,8 +19,8 @@
         "phpunit/phpunit": "^9.4",
         "phpstan/phpstan": "^0.12.23",
         "phpstan/phpstan-phpunit": "^0.12.8",
-        "symplify/easy-coding-standard": "^7.3",
-        "symplify/phpstan-extensions": "^7.3"
+        "symplify/easy-coding-standard": "^8.3.48",
+        "symplify/phpstan-extensions": "^8.3.48"
         
     },
     "scripts": {
@@ -32,5 +32,10 @@
         "check-cs": "ecs check src tests --ansi",
         "fix-cs": "ecs check src tests --fix --ansi",
         "phpstan": "phpstan analyse --ansi"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }
