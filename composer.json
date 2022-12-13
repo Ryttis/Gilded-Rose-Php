@@ -1,8 +1,8 @@
 {
     "name": "emilybache/gilded-rose-refactoring-kata",
-    "description": "A kata to practice refactoring, tests and polymorphism",
+    "description": "A kata to practice refactoring, tests and polymorphism, very interesting practice",
     "require": {
-        "php": "^8.0"
+        "php": "^7.2"
         
     },
     "autoload": {
