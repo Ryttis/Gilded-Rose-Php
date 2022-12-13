@@ -3,7 +3,7 @@
 ### Requirements
 php: 7.3 or above
 
-### Installation
+### Installation - nera lietuvisko zodzio
 composer install
 
 ### Tests
